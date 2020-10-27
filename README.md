@@ -1,2 +1,4 @@
 # Pure CSS Shapes and Logos
-Tiny Project I did for School
+How to download the source code;
+1. Press the big green button on the right
+2. Download as Zip
