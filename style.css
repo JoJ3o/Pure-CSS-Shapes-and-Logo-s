@@ -1,0 +1,571 @@
+/*#region Main*/
+    * {
+        box-sizing: border-box;
+        position: relative;
+    }
+    body {
+        background-color: #333333;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+    .shapes {
+        display: flex;
+    }
+    .common {
+        left: 50px;
+    }
+    .uncommon {
+        left: 220px;
+    }
+    .special {
+        left: 380px;
+    }
+    .custom {
+        left: 750px;
+    }
+    .common div{
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: steelblue;
+    }
+    .uncommon div {
+        margin: 20px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .custom div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+/*#endregion*/
+
+/*#region Common*/
+    .square {
+        width: 100px;
+        height: 100px;;
+    }
+    .rectangle {
+        width: 200px;
+        height: 100px;
+
+    }
+    .parallelogram {
+        width: 150px;
+        height: 100px;
+        transform: skewX(20deg);
+        margin-left: 40px !important;
+    }
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    .oval {
+        width: 200px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    /*#region Pentagon*/
+        .pentagon {
+            width: 90px;
+            height: 50px;
+            background-color: transparent !important;
+            border-top: 45px solid steelblue;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            top: 75px;
+        }
+        .pentagon::after {
+            content: " ";
+            position: absolute;
+            border-bottom: 40px solid steelblue;
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+            top: -85px;
+        }
+        .pentagon p {
+            bottom: 40px;
+            z-index: 1;
+        }
+    /*#endregion*/
+    /*#region Octagon*/
+        .octagon {
+            width: 100px;
+            height: 40px;
+            background-color: steelblue;
+            position: relative;
+            left: 110px;
+            top: -10px;
+        }
+        .octagon::before {
+            content: "";
+            position: absolute;
+            width: 42px;
+            height: 0;
+            top: -29px;
+            border-bottom: 29px solid steelblue;
+            border-left: 29px solid transparent;
+            border-right: 29px solid transparent;
+        }
+        .octagon::after {
+            content: "";
+            position: absolute;
+            width: 42px;
+            height: 0;
+            top: 40px;
+            border-top: 29px solid steelblue;
+            border-left: 29px solid transparent;
+            border-right: 29px solid transparent;
+        }
+    /*#endregion*/
+    
+/*#endregion*/
+
+/*#region Uncommon*/
+    /*#region Triangle*/
+        .triangle {
+            width: 100px;
+            height: 100px;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid steelblue;
+        }
+        .triangle p {
+            top: 60px;
+        }
+    /*#endregion*/
+    /*#region Curved Arrow*/
+        .arrow {
+            width: 0px;
+            height: 0px;
+            border-top: 12px solid transparent;
+            border-right: 12px solid red;
+            transform: rotate(10deg);
+        }
+        .arrow::after {
+            content: " ";
+            position: absolute;
+            border: 0 solid transparent;
+            border-top: 5px solid red;
+            border-radius: 30px 0 0 0;
+            top: -23px;
+            left: -29px;
+            width: 30px;
+            height: 30px;
+            transform: rotate(45deg);        }
+        .arrowShape {
+            left: 48px;
+            top: 10px;
+        }
+    /*#endregion*/
+    /*#region Trapezoid*/
+        .trapezoid {
+            width: 200px;
+            height: 100px;
+            border-bottom: 100px solid steelblue;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            left: -50px;
+            top: 10px;
+        }
+        .trapezoid p {
+            top: 50px;
+        }
+    /*#endregion*/
+    /*#region Star6P*/
+        .star6p {
+            width: 0;
+            height: 0;
+            border-bottom: 100px solid steelblue;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: relative;
+        }
+        .star6p::after {
+            border-top: 100px solid steelblue;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            position: absolute;
+            content: " ";
+            top: 30px;
+            left: -50px;
+        }
+        .star6p p {
+            top: 65px;
+            z-index: 2;
+        }
+    /*#endregion*/
+    /*#region Star5P*/
+        .star5p {
+            width: 0;
+            height: 0;
+            border-bottom: 70px solid steelblue;
+            border-right: 100px solid transparent;
+            border-left: 100px solid transparent;
+            transform: rotate(35deg);
+            left: -44px;
+            top: 20px;
+        }
+        .star5p::before {
+            content: " ";
+            border-bottom: 70px solid steelblue;
+            border-right: 100px solid transparent;
+            border-left: 100px solid transparent;
+            transform: rotate(-70deg);
+            position: absolute;
+            top: 3px;
+            left: -105px;
+        }
+        .star5p::after {
+            content: " ";
+            position: absolute;
+            border-bottom: 80px solid steelblue;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            transform: rotate(-35deg);
+            left: -65px;
+            top: -45px;
+
+        }
+        .star {
+            top: 85px;
+            left: 55px;
+            z-index: 2;
+        }
+    /*#endregion*/
+/*#endregion*/
+
+/*#region Special*/
+        /*#region Heart*/
+            .heart {
+                width: 100px;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .heart::before, .heart::after {
+                content: "";
+                position: absolute;
+                left: 50px;
+                top: 10px;
+                width: 50px;
+                height: 80px;
+                background-color: red;
+                border-radius: 50px 50px 0 0;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+                z-index: -1;
+            }
+            .heart::after {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+        /*#endregion*/
+        /*#region YingYang*/
+            .yingYang {
+                width: 96px;
+                height: 48px;
+                background-color: snow;
+                border: solid black;
+                border-width: 2px 2px 50px 2px;
+                border-radius: 100%;
+                box-sizing: content-box;
+                top: 50px;
+            }
+            .yingYang::before, .yingYang::after {
+                content: "";
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                box-sizing: content-box;
+            }
+            .yingYang::before {
+                background-color: snow;
+                border: 18px solid black;
+                top: 50%;
+            }
+            .yingYang::after {
+                background-color: black;
+                border: 18px solid snow;
+                top: 50%;
+                left: 50%;
+            }
+        /*#endregion*/
+        /*#region Space Invader*/
+            .alien {
+                box-shadow:
+                /*Head*/ 
+                0 0 0 1em,
+                0 1em 0 1em,
+                -2.5em 1.5em 0 .5em,
+                2.5em 1.5em 0 .5em,
+                -2em -1em 0 0,
+                -3em -1em 0 0,
+                2em -1em 0 0,
+                3em -1em 0 0,
+                -3em 0 0 0,
+                3em 0 0 0,
+                /*Antennas*/
+                -3em -3em 0 0,
+                -2em -2em 0 0,
+                2em -2em 0 0,
+                3em -3em 0 0,
+                /*LeftArm*/
+                -4em 0 0 0,
+                -4em 1em 0 0,
+                -5em 1em 0 0,
+                -5em 2em 0 0,
+                -5em 3em 0 0,
+                /*RightArm*/
+                4em 0 0 0,
+                4em 1em 0 0,
+                5em 1em 0 0,
+                5em 2em 0 0,
+                5em 3em 0 0,
+                /*LeftLeg*/
+                -3em 3em 0 0,
+                -2em 4em 0 0,
+                -1em 4em 0 0,
+                /*RightLeg*/
+                3em 3em 0 0,
+                2em 4em 0 0,
+                1em 4em 0 0;
+                width: 1em;
+                height: 1em;
+                background-color: greenyellow;
+                color: greenyellow;
+                top: 160px;
+                left: 40px;
+            }
+        /*#endregion*/
+        /*#region youtube*/
+            .youtube {
+                width: 200px;
+                height: 140px;
+                background-color: red;
+                top: 280px;
+                left: -48px;
+                border-radius: 50% / 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .youtube::before {
+                content: '';
+                position: absolute;
+                top: 10%;
+                bottom: 10%;
+                right: -5%;
+                left: -5%;
+                background: inherit;
+                border-radius: 5% / 50%;
+            }
+            .youtube::after {
+                content: "";
+                position: absolute;
+                border-left: 50px solid white;
+                border-top: 25px solid transparent;
+                border-bottom: 25px solid transparent;
+            }
+        /*#endregion*/
+/*#endregion*/
+
+/*#region custom*/
+    .custom1 {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: steelblue;
+        border-left: 50px double blue;
+        border-right: 50px double red;
+        border-bottom: 50px double yellow;
+        border-top: 50px double green;
+    }
+    .custom2 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: steelblue;
+        border-left: 50px groove blue;
+        border-right: 50px ridge red;
+        border-bottom: 50px ridge yellow;
+        border-top: 50px groove green;
+    }
+    /*#region MovementUI*/
+        .triangleUp {
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid forestgreen;
+            left: 20px;
+        }
+        .triangleDown {
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid firebrick;
+            top: 240px;
+            right: 80px;
+        }
+        .triangleLeft {
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-right: 100px solid goldenrod;
+            right: 300px;
+            top: 120px;
+        }
+        .triangleRight{
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid steelblue;
+            right: 160px;
+            top: 120px;
+        }
+        .triangleUp p {
+            top: 70px;
+        }
+        .triangleDown p {
+            bottom: 70px;
+        }
+        .triangleLeft p {
+            left: 70px;
+        }
+        .triangleRight p {
+            right: 70px;
+        }
+        .jump div{
+            background-color: steelblue;
+            right: 380px;
+            top: 120px;
+        }
+        .jump .square {
+            background-color: midnightblue;
+        }
+        .jump .rectangle {
+            width: 100px;
+            height: 75px;
+            background-color: purple;
+            right: 480px;
+            z-index: 1;
+        }
+        .jump .circle {
+            width: 75px;
+            height: 75px;
+            background-color: indigo;
+            right: 570px;
+            z-index: 2;
+        }
+        .jump .oval {
+            width: 75px;
+            height: 37.5px;
+            background-color: mediumslateblue;
+            right: 645px;
+            z-index: 3;
+        }
+        .custom p {
+            color: snow;
+        }
+    /*#endregion*/
+    /*#region HexagonPs*/
+    .hexagon {
+        position: relative;
+        width: 150px; 
+        height: 86.60px;
+        margin: 43.30px 0;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png);
+        background-size: auto 161.6581px;
+        background-position: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        border-left: solid 5px #000000;
+        border-right: solid 5px #000000;
+        top: 260px;
+      }
+      
+      .hexTop,
+      .hexBottom {
+        position: absolute;
+        z-index: 1;
+        width: 106.07px;
+        height: 106.07px;
+        overflow: hidden;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background: inherit;
+        left: 16.97px;
+        box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      }
+      
+      /*counter transform the bg image on the caps*/
+      .hexTop:after,
+      .hexBottom:after {
+        content: "";
+        position: absolute;
+        width: 140.0000px;
+        height: 80.82903768654762px;
+        -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+        -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+        transform:          rotate(45deg) scaleY(1.7321) translateY(-40.4145px);
+        -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+        background-image: inherit;
+      }
+      
+      .hexTop {
+        top: -53.0330px;
+        border-top: solid 7.0711px #000000;
+        border-right: solid 7.0711px #000000;
+      }
+      
+      .hexTop:after {
+        background-position: center top;
+      }
+      
+      .hexBottom {
+        bottom: -53.0330px;
+        border-bottom: solid 7.0711px #000000;
+        border-left: solid 7.0711px #000000;
+      }
+      
+      .hexBottom:after {
+        background-position: center bottom;
+      }
+      
+      .hexagon:after {
+        content: "";
+        position: absolute;
+        top: 2.8868px;
+        left: 0;
+        width: 140.0000px;
+        height: 80.8290px;
+        z-index: 2;
+        background: inherit;
+      }
+    /*#endregion*/
+    /*#region Hexagon*/
+        
+    /*#endregion*/
+
+/*#endregion*/
